@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "breeze"
+version = "0.1.0"
+description = "AI-powered Python code understanding and transformation tool"
+authors = [
+    {name = "Breeze Development Team"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "google-generativeai>=0.3.0",
+    "pathlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+]
+
+[project.scripts]
+breeze = "breeze.main:main"
+
+[project.urls]
+Homepage = "https://ai.google.dev/"
+Repository = "https://github.com/YOUR_USERNAME/breeze"
+Issues = "https://github.com/YOUR_USERNAME/breeze/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+breeze = ["*.txt", "*.md"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

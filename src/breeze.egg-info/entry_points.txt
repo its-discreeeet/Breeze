@@ -1,0 +1,2 @@
+[console_scripts]
+breeze = breeze.main:main

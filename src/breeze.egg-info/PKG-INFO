@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: breeze
+Version: 0.1.0
+Summary: AI-powered Python code understanding and transformation tool
+Author: Breeze Development Team
+License: MIT
+Project-URL: Homepage, https://ai.google.dev/
+Project-URL: Repository, https://github.com/YOUR_USERNAME/breeze
+Project-URL: Issues, https://github.com/YOUR_USERNAME/breeze/issues
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: google-generativeai>=0.3.0
+Requires-Dist: pathlib
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: flake8>=4.0.0; extra == "dev"
+Requires-Dist: mypy>=0.950; extra == "dev"
