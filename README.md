@@ -73,70 +73,62 @@ Core Capabilities
 - Google AI API key ([Get yours here](https://ai.google.dev/))
 
 ### **Install from Source**
-bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/breeze.git
+
+### Clone the repository
+```
+git clone https://github.com/its-discreeeet/breeze.git
 cd breeze
-
-# Install dependencies
+```
+### Install dependencies
+```
 pip install -r requirements.txt
+```
 
-# Install in development mode
+### Install in development mode
+```
 python -m pip install -e .
+```
 Setup API Key
-Windows (Command Prompt):
-
-text
+For windows :
+```
 set GEMINI_API_KEY "your_api_key_here"
-Windows (PowerShell):
+```
 
-powershell
-$env:GEMINI_API_KEY="your_api_key_here"
-# For permanent: [Environment]::SetEnvironmentVariable("GEMINI_API_KEY", "your_key", "User")
-Linux/macOS:
-
-bash
+For linux/macOS :
 export GEMINI_API_KEY="your_api_key_here"
-# Add to ~/.bashrc or ~/.zshrc for persistence
-echo 'export GEMINI_API_KEY="your_api_key_here"' >> ~/.bashrc
-Verify Installation
-bash
+
+### Verify Installation
+```
 breeze --help
 breeze chat
-🛠️ Usage Guide
+```
+## 🛠️ Usage Guide
 Quick Start
-bash
-# Interactive mode - best for beginners
-breeze chat
 
-# Generate documentation
-breeze doc your_script.py
+#### **Available Commands**
 
-# Analyze code for issues
-breeze inspect app.js --verbose
+| Command | Description | Example |
+|---------|-------------|---------|
+| `doc` | Generate documentation | `breeze doc calculator.py` |
+| `summarize` | Create code summary | `breeze summarize main.js` |
+| `test` | Generate unit tests | `breeze test api.java --output new-file` |
+| `inspect` | Detect bugs and issues | `breeze inspect security.php` |
+| `refactor` | Improve code structure | `breeze refactor legacy.cpp --secure` |
+| `annotate` | Add type annotations | `breeze annotate api.ts` |
+| `migrate` | Migrate code versions | `breeze migrate old.py --target "Python 3.12"` |
+| `chat` | Interactive assistant | `breeze chat` |
 
-# Generate tests
-breeze test utils.java --output new-file
-Command Reference
-Basic Syntax
-bash
-breeze <command> [path] [options]
-Available Commands
-Command	Description	Example
-doc	Generate documentation	breeze doc calculator.py
-summarize	Create code summary	breeze summarize main.js
-test	Generate unit tests	breeze test api.java --output new-file
-inspect	Detect bugs and issues	breeze inspect security.php
-refactor	Improve code structure	breeze refactor legacy.cpp --secure
-annotate	Add type annotations	breeze annotate api.ts
-migrate	Migrate code versions	breeze migrate old.py --target "Python 3.12"
-chat	Interactive assistant	breeze chat
-Global Options
-Option	Description	Example
---output MODE	Set output mode: console, in-place, new-file	--output in-place
---secure	Require user approval for changes	--secure
--v, --verbose	Enable detailed logging	--verbose
---help	Show help information	--help
-Command-Specific Options
-Command	Option	Description	Example
-migrate	--target	Migration target	--target "TypeScript"
+#### **Global Options**
+
+| Option | Description | Example |
+|--------|-------------|---------|
+| `--output MODE` | Set output mode: `console`, `in-place`, `new-file` | `--output in-place` |
+| `--secure` | Require user approval for changes | `--secure` |
+| `-v, --verbose` | Enable detailed logging | `--verbose` |
+| `--help` | Show help information | `--help` |
+
+#### **Command-Specific Options**
+
+| Command | Option | Description | Example |
+|---------|--------|-------------|---------|
+| `migrate` | `--target` | Migration target | `--target "TypeScript"` |
