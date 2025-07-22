@@ -547,7 +547,7 @@ def main() -> None:
     if not api_key:
         print("❌ Error: GEMINI_API_KEY environment variable not set.")
         print("\n🔑 Please set your Google AI API key:")
-        print("  Windows (CMD):      setx GEMINI_API_KEY \"your_key_here\"")
+        print("  Windows (CMD):      set GEMINI_API_KEY \"your_key_here\"")
         print("  Windows (PowerShell): $env:GEMINI_API_KEY=\"your_key_here\"")
         print("  Linux/macOS:        export GEMINI_API_KEY=your_key_here")
         print("\n🌐 Get your API key at: https://ai.google.dev/")
