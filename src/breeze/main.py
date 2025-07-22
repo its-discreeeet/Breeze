@@ -42,7 +42,7 @@ Examples:
 """,
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""For more information and examples, visit: https://ai.google.dev/
-Set your API key: export GEMINI_API_KEY=your_api_key (Linux/macOS) or setx GEMINI_API_KEY "your_api_key" (Windows)"""
+Set your API key: export GEMINI_API_KEY=your_api_key (Linux/macOS) or set GEMINI_API_KEY "your_api_key" (Windows)"""
     )
     
     subparsers = parser.add_subparsers(dest="command", help="Available commands", metavar="COMMAND")
