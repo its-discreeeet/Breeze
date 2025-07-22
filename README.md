@@ -70,7 +70,7 @@ Core Capabilities
 
 ### **Prerequisites**
 - Python
-- Google AI API key ([Get yours here](https://ai.google.dev/))
+- Google AI API key ([Get yours here](https://ai.google.dev/)) (Note : I have made this project to utilize gemini-1.5-flash model as it is the only free api key available with a decent token limit)
 
 ### **Install from Source**
 
