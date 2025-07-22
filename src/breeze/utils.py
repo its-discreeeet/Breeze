@@ -21,9 +21,50 @@ def setup_logging(verbose: bool = False) -> None:
 
 
 def validate_file_path(file_path: str) -> bool:
-    """Validate that a file path exists and is a Python file."""
+    """Validate that a file path exists and is readable."""
     path = Path(file_path)
-    return path.exists() and path.is_file() and path.suffix == ".py"
+    return path.exists() and path.is_file()  # Remove .py restriction
+
+def get_file_extension(file_path: str) -> str:
+    """Get the file extension."""
+    return Path(file_path).suffix.lower()
+
+def get_file_type(file_path: str) -> str:
+    """Determine file type based on extension."""
+    ext = get_file_extension(file_path)
+    
+    # Map extensions to file types
+    type_mapping = {
+        '.py': 'python',
+        '.js': 'javascript', 
+        '.ts': 'typescript',
+        '.java': 'java',
+        '.cpp': 'cpp',
+        '.c': 'c',
+        '.cs': 'csharp',
+        '.php': 'php',
+        '.rb': 'ruby',
+        '.go': 'go',
+        '.rs': 'rust',
+        '.swift': 'swift',
+        '.kt': 'kotlin',
+        '.scala': 'scala',
+        '.html': 'html',
+        '.css': 'css',
+        '.sql': 'sql',
+        '.json': 'json',
+        '.xml': 'xml',
+        '.yaml': 'yaml',
+        '.yml': 'yaml',
+        '.md': 'markdown',
+        '.txt': 'text',
+        '.sh': 'shell',
+        '.bat': 'batch',
+        '.ps1': 'powershell'
+    }
+    
+    return type_mapping.get(ext, 'text')
+
 
 
 def read_file_content(file_path: str) -> str:
@@ -48,17 +89,18 @@ def write_file_content(file_path: str, content: str) -> None:
 
 
 def get_output_filename(original_path: str, command: str) -> str:
-    """Generate appropriate output filename based on command."""
+    """Generate appropriate output filename based on command and file type."""
     path = Path(original_path)
+    file_type = get_file_type(original_path)
     
     extensions = {
-        "doc": ".documented.py",
+        "doc": f".documented{path.suffix}",
         "summarize": ".summary.md",
-        "test": f"test_{path.stem}.py",
+        "test": f"test_{path.stem}{_get_test_extension(file_type)}",
         "inspect": ".inspection.md",
-        "refactor": ".refactored.py",
-        "annotate": ".annotated.py",
-        "migrate": ".migrated.py"
+        "refactor": f".refactored{path.suffix}",
+        "annotate": f".annotated{path.suffix}",
+        "migrate": f".migrated{path.suffix}"
     }
     
     extension = extensions.get(command, ".output.txt")
@@ -67,9 +109,26 @@ def get_output_filename(original_path: str, command: str) -> str:
         # Put test files in a tests directory
         test_dir = path.parent / "tests"
         test_dir.mkdir(exist_ok=True)
-        return str(test_dir / f"test_{path.stem}.py")
+        return str(test_dir / f"test_{path.stem}{_get_test_extension(file_type)}")
     else:
         return str(path.parent / f"{path.stem}{extension}")
+
+def _get_test_extension(file_type: str) -> str:
+    """Get appropriate test file extension based on file type."""
+    test_extensions = {
+        'python': '.py',
+        'javascript': '.test.js',
+        'typescript': '.test.ts',
+        'java': '.java',
+        'cpp': '.cpp',
+        'c': '.c',
+        'csharp': '.cs',
+        'php': '.php',
+        'ruby': '.rb',
+        'go': '_test.go',
+        'rust': '.rs',
+    }
+    return test_extensions.get(file_type, '.txt')
 
 
 def get_api_key() -> Optional[str]:
