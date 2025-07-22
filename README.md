@@ -1,7 +1,7 @@
 # breeze
 Your personal CLI Agent
 
-[![Python Version](https://img.shields.iottps://img.shields.elds.io) extensible command-line and Python tool for automating code understanding and transformation tasks across multiple programming languages. It leverages the advanced capabilities of Google's Gemini large language models (LLMs) to generate documentation, summaries, type annotations, tests, bug detection, refactoring, and more—all from your terminal or scripts.
+'**breeze**' is an extensible command-line and Python tool for automating code understanding and transformation tasks across multiple programming languages. It leverages the advanced capabilities of Google's Gemini large language models (LLMs) to generate documentation, summaries, type annotations, tests, bug detection, refactoring, and more—all from your terminal or scripts.
 
 ## 🏗️ Architecture Overview
 Below is the detailed architecture diagram of breeze, showing the flow from user input through the CLI, flow orchestration, agent nodes, utility layers, and the Google AI Cloud:
