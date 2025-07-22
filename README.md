@@ -69,7 +69,7 @@ Core Capabilities
 ## 📦 Installation
 
 ### **Prerequisites**
-- Python 3.9 or higher
+- Python
 - Google AI API key ([Get yours here](https://ai.google.dev/))
 
 ### **Install from Source**
