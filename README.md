@@ -107,10 +107,12 @@ Quick Start
 
 #### **Available Commands**
 
+NOTE: Kindly ensure that you provide the correct file paths when using the below cmds. I have provided a few test files in the **test** directory for you to use initially.
+
 | Command | Description | Example |
 |---------|-------------|---------|
-| `doc` | Generate documentation | `breeze doc calculator.py` |
-| `summarize` | Create code summary | `breeze summarize main.js` |
+| `doc` | Generate documentation | `breeze doc binarysearchtree.c` |
+| `summarize` | Create code summary | `breeze summarize f1.py` |
 | `test` | Generate unit tests | `breeze test api.java --output new-file` |
 | `inspect` | Detect bugs and issues | `breeze inspect security.php` |
 | `refactor` | Improve code structure | `breeze refactor legacy.cpp --secure` |
