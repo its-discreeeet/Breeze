@@ -83,10 +83,7 @@ cd breeze
 ```
 pip install -r requirements.txt
 ```
-
-### Install in development mode
-
-Run this cmd in administrator mode. If you are in windows, open your directory in administrator mode and then run the below cmd
+Run the below cmd in administrator mode. If you are in windows, open your directory in administrator mode and then run the below cmd
 ```
 python -m pip install -e .
 ```
