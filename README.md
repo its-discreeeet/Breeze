@@ -6,7 +6,8 @@ Your personal CLI Agent
 ## 🏗️ Architecture Overview
 Below is the detailed architecture diagram of breeze, showing the flow from user input through the CLI, flow orchestration, agent nodes, utility layers, and the Google AI Cloud (zoom in to see everything to detail, its too big to view without any magnification) :
 
-<img width="3840" height="1165" alt="breeze flowchart" src="https://github.com/user-attachments/assets/a31bff49-2f17-4d22-a937-1cd84d74ad51" />
+<img width="3840" height="1173" alt="breeze flowchart" src="https://github.com/user-attachments/assets/de9cb6f3-ccb3-436a-9b15-dd10bc044ee6" />
+
 
 ## 🚀 Features
 Core Capabilities
